@@ -1,23 +1,32 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
+import SearchBar from "./components/SearchBar";
+import UserCard from "./components/UserCard";
+import { useEffect, useState } from "react";
 
 function App() {
+  const [usersList, setUsersList] = useState(null);
+  //fetch data from randomuserapi
+  useEffect(() => {
+    fetch("https://randomuser.me/api/?results=30")
+      .then((response) => response.json())
+      .then((data) => setUsersList(data.results));
+  }, []);
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      {usersList ? (
+        usersList.map((user) => {
+          return (
+            <div key={user.id.value ? user.id.value : user.email}>
+              {/* <p>{user.name.first}</p>
+              <img src={user.picture.large} alt="profile" /> */}
+              <UserCard {...user} />
+            </div>
+          );
+        })
+      ) : (
+        <span>Cargando usuarios...</span>
+      )}
+      <SearchBar />
     </div>
   );
 }
