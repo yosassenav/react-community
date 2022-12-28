@@ -11,12 +11,13 @@ function SearchBar(props) {
   };
   return (
     <div>
-      <label>Filtrar usuarios</label>
+      <label>Filtrar usuarios: </label>
       <input
         onChange={handleChange}
         value={string}
         type="text"
         placeholder="Escribe usuario..."
+        className="search-bar"
       />
     </div>
   );

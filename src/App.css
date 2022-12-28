@@ -2,30 +2,34 @@
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.user-img {
+  border: 2px solid white;
+  border-radius: 35px;
 }
 
-@media (prefers-reduced-motion: no-preference) {
+.search-bar {
+  border: 2px solid rgb(219, 213, 213);
+  border-radius: 12px;
+  width: 400px;
+  height: 30px;
+  margin: 25px 10px;
+}
+
+.card-container {
+  display: flex;
+  justify-content: center;
+  padding: 20px; /*padding top and botttom*/
+}
+
+.user-title-padding {
+  padding: 12px; /*padding between user profile img and user title*/
+  word-wrap: break-all;
+}
+
+/* @media (prefers-reduced-motion: no-preference) {
   .App-logo {
     animation: App-logo-spin infinite 20s linear;
   }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
 }
 
 @keyframes App-logo-spin {
@@ -35,4 +39,4 @@
   to {
     transform: rotate(360deg);
   }
-}
+} */

@@ -18,8 +18,6 @@ function App() {
         usersList.map((user) => {
           return (
             <div key={user.id.value ? user.id.value : user.email}>
-              {/* <p>{user.name.first}</p>
-              <img src={user.picture.large} alt="profile" /> */}
               <UserCard {...user} />
             </div>
           );

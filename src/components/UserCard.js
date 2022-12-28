@@ -1,8 +1,12 @@
 function UserCard(platano) {
   return (
-    <div className="card">
-      <img src={platano.picture.medium} alt={`${platano.name.first} profile`} />
-      <div>
+    <div className="card-container">
+      <img
+        className="user-img"
+        src={platano.picture.medium}
+        alt={`${platano.name.first} profile`}
+      />
+      <div className="user-title-padding">
         <p>
           {`${platano.name.title}. ${platano.name.first} ${platano.name.last}`}
         </p>
