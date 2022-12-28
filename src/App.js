@@ -13,6 +13,7 @@ function App() {
   }, []);
   return (
     <div className="App">
+      <SearchBar userList={usersList} />
       {usersList ? (
         usersList.map((user) => {
           return (
@@ -26,7 +27,6 @@ function App() {
       ) : (
         <span>Cargando usuarios...</span>
       )}
-      <SearchBar />
     </div>
   );
 }
