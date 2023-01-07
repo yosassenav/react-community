@@ -1,12 +1,17 @@
 function UserCard(platano) {
+  const handleClick = (user) => {
+    console.log(user);
+  };
+
   return (
-    <div className="card-container">
-      <img
-        className="user-img"
-        src={platano.picture.medium}
-        alt={`${platano.name.first} profile`}
-      />
-      <div className="user-title-padding">
+    <div
+      onClick={() => {
+        handleClick(platano);
+      }}
+      className="card"
+    >
+      <img src={platano.picture.medium} alt={`${platano.name.first} profile`} />
+      <div>
         <p>
           {`${platano.name.title}. ${platano.name.first} ${platano.name.last}`}
         </p>
